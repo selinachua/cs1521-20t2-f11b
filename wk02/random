@@ -1,0 +1,19 @@
+- int -> 4 bytes -> 32 bits (32 1s and 0s)
+int num = 127; // 0111 1111
+0000 0000 0000 0000 0000 0000 0111 1111
+0111 1111 1111 1111 1111 1111 1111 1111
+
+SIGNED INTEGERS -> negative numbers
+0000 0000 0000 0000 0000 0000 0111 1111 -> positive
+1000 0000 0000 0000 0000 0000 0111 1111 -> negative
+
+
+- double -> 8 bytes -> 64 bits
+0000 0000 0000 0000 0000 0000 0111 1111 0000 0000 0000 0000 0000 0000 0111 1111
+
+- char   -> 1 byte  -> 8 bits 
+char ch = 'a'; // int ch = 97;
+0110 0001
+
+char *str = malloc(10 * sizeof(char))
+char *str = malloc(10);
