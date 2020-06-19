@@ -1,0 +1,69 @@
+IEEE Floating Point Representation
+int -> 4 bytes 
+char -> 1 byte 
+
+single precision float -> 32 bits -> float 
+float f = 0.5;
+double precision float -> 64 bits -> double
+double d = 0.5;
+
+sign | exponent |  mantissa (fraction)
+  0  | 01111111 | 10000000000000000000000
+1 + 8 + 23 = 32
+
+Formula for converting IEEE -> decimal:
+bias = 127
+(-1)^sign * (1 + fraction) * 2^(exponent - bias)
+sign     = -1 ^ 0 = 1 
+fraction = 0.5
+exponent = 127
+
+(-1)^0 * (1 + 0.5) * 2^(127 - 127)
+= 1 * 1.5 * 2^0 
+= 1.5
+
+How to find each section:
+SIGN:
+
+EXPONENT:
+
+FRACTION:
+
+IEEE -> decimal
+(-1)^sign * (1 + fraction) * 2^(exponent - bias)
+a) 0 01111111 10000000000000000000000
+= 1.5
+
+b) 0 01111110 00000000000000000000000
+sign     = 0
+exponent = 126
+fraction = 0
+(-1)^0 * (1 + 0) * 2^(126 - 127)
+= 1 * 1 * 2^(-1)
+= 0.5
+
+c) 0 01111110 11111111111111111111111
+
+d) 0 10000000 01100000000000000000000
+
+e) 0 10010100 10000000000000000000000
+
+decimal -> IEEE
+(-1)^sign * (1 + fraction) * 2^(exponent - bias)
+1. Find biggest power of 2 that fits 
+2. Divide by that
+
+Hints:
+2^(-1) = 0.5
+2^(-2) = 0.25
+2^(-3) = 0.125
+2^(-4) = 0.0625
+
+a) 2.5 = 1.25 * 2^1
+= 1 * (1 + 0.25)  * 2^(128 - 127)
+
+b) 0.375
+
+c) 27.0
+
+d) 100.0

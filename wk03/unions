@@ -1,0 +1,10 @@
+struct overlay {
+    float f;    // 32 bits
+    uint32_t u; // 32 bits
+};
+
+
+union overlay {
+    float f;    // 32 bits
+    uint32_t u; // 32 bits
+}; -> 32 bits
