@@ -1,0 +1,11 @@
+C -> ... -> assembly -> ... -> executable binary
+
+STATIC ALLOCATION - memory allocated during compile time 
+- Global and static variables 
+- Arrays
+- Strings
+
+# $t0 = x
+int x, int y -> local variables -> registers 
+
+MEMORY -> LOAD into reg -> modify -> SAVE into memory

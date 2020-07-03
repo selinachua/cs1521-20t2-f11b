@@ -1,0 +1,12 @@
+C -> ... -> assembly -> ... -> executable
+
+
+load:
+1. IMMEDIATE: $t0 = 1, '\n', 'a'
+li  $t0, 1
+
+2. REGISTER:  $t0 = $t1
+move    $t0, $t1
+
+3. MEMORY:    $t0 = memory / data
+la  $t0, label
