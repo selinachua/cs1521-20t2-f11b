@@ -1,0 +1,49 @@
+Q3:
+uninitialised -> int x;      -> .space
+initilaised   -> int x = 10; -> .word, .byte
+x:
+    .space  4
+
+Q5:
+$t0 = 0x10010008
+lw  $t1, 8($t0)
+$t1 = 5
+
+Q7:
+move    $a0,
+move    $a1
+jal     ...
+
+Q8:
+
+
+STACKFRAMES
+Mistake:
+set_up_stackframe()
+run_generation()
+tear_down_stackframe()
+
+Reality:
+run_generation(),
+where
+run_generation() {
+    set_up_stackframe()
+    ...
+    tear_down_stackframe()
+    return
+}
+
+main -> run_generation 10 x
+
+wrong:
+use $t0 in main....
+run_generation() -> use $t0 ...
+use $t0 in main....
+
+right:
+wrong:
+use $s0 in main....
+run_generation() -> use $t0 ...
+use $s0 in main....
+
+main ($s0-$s2) -> add ($s0-$s3) -> sub ($s0)
