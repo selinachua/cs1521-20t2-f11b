@@ -1,0 +1,32 @@
+Convert each of these fopen calls to an equivalent open call.
+
+fopen(FilePath, "r")
+open(FilePath, O_RDONLY);
+
+fopen(FilePath, "a")
+open(FilePath, O_WRONLY | O_APPEND | O_CREAT);
+
+fopen(FilePath, "w")
+open(FilePath, O_WRONLY | O_CREAT | O_TRUNC);
+
+fopen(FilePath, "r+")
+open(FilePath, O_RDWR);
+
+fopen(FilePath, "w+")
+open(FilePath, O_RDWR | O_CREAT | O_TRUNC);
+
+FILE *fopen(char *path, char *mode) {
+    if (!path) { ... }
+    open(path, ...)
+}
+
+
+What is the difference between a file descriptor and a file pointer?
+open -> fd == int 
+int fd = open(text.txt, O_RDONLY); // fd == 3
+1 -> stdout
+2 -> stderr 
+3 -> text.txt
+
+fopen -> FILE *
+FILE *fp 

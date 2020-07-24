@@ -1,0 +1,7 @@
+struct alignment {
+    char c; // 1 byte   offset: 0
+    // 3 bytes in between
+    int x;  // 4 bytes  offset: 4
+};
+
+alignment var; // size 8
