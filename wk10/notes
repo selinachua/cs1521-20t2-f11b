@@ -1,0 +1,15 @@
+ENVIRONMENT
+- $HOME, $PATH
+- Environment variables
+
+char *home_path = "/Users/selina";
+
+MEMORY
+process address (virtual address) -> physical address:
+1. Calculate the page in which the vaddr
+2. Calculate the offset from start of the page 
+3. Figure out what frame the page is in by checking page table
+    If the page is not in a frame yet, this triggers a page fault:
+        - if free frame exists, then you just load page into that
+        - if no free frame, then LRU to evict a page
+4. Calculate the paddr
